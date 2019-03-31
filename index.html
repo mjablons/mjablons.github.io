@@ -35,8 +35,20 @@ var numMoves = 9
 var payouts = []
 
 
-function processButton(){
+function processButton(color){
 	
+	var score = calcScore(color);
+	payouts.push(score);
+	drawScore(score, color);
+	idnum++
+	if (idnum <= numMoves){
+	    makeNextInput();
+
+	    document.getElementById("move".concat(idnum.toString())).select();
+	} else {
+	    finishUp()
+	}
+}
 	
 	
 }
@@ -87,9 +99,9 @@ function drawScore(score, color){
 }
 
 function calcScore(current){
-    if (current == "r"){
+    if (current == "red"){
 	moves.push(1)
-    } else if (current == "b") {
+    } else if (current == "blue") {
 	moves.push(0)
     }
     buffer = getBuffer(moves, bufferLength)
@@ -98,9 +110,9 @@ function calcScore(current){
     redPayout = fracRed * redPayout100 + (1 - fracRed) * redPayout0
     bluePayout = fracRed * bluePayout100 + (1 - fracRed) * bluePayout0
     noise = Math.random() - .5;
-    if (current == "r"){
+    if (current == "red"){
 	return Math.max(redPayout + noise, 0);
-    } else if (current == "b") {
+    } else if (current == "blue") {
 	return Math.max(bluePayout + noise, 0);
     } else {
 	return 0;
@@ -169,8 +181,8 @@ function finishUp(){
     <p> 
     Move: <input type="text" name="move1" id="move1" onkeypress="processMove(event)">
 	
-	<button class="button_red" name="move1" id="move_red" onclick="processButton">Red</button>
-	<button class="button_blue" name="move1" id="move_blue" onclick="processButton">Blue</button>
+	<button class="button_red" name="move1" id="move_red" onclick="processButton(red)">Red</button>
+	<button class="button_blue" name="move1" id="move_blue" onclick="processButton(blue)">Blue</button>
 	
     </p>
 </div>
