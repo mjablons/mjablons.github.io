@@ -6,7 +6,7 @@ var bufferLength = 10
 var redPayout0 = 0
 var redPayout100 = 6
 var bluePayout0 = 4
-var bluePayout100 = 10
+var bluePayout100 = 10 
 var numMoves = 100
 var payouts = []
 
