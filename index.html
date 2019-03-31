@@ -60,8 +60,9 @@ function processMove(event){
 	var color = calcColor(tbv);
 	drawScore(score, color);
 	idnum++
+	makeNextInput(color);
+
 	if (idnum <= numMoves){
-	    makeNextInput();
 
 	    document.getElementById("move".concat(idnum.toString())).select();
 	} else {
@@ -70,17 +71,12 @@ function processMove(event){
     }
 }
 
-function makeNextInput(){
+function makeNextInput(color){
     var para = document.createElement("P");
-    var t = document.createTextNode("Move: ");
+    var t = document.createTextNode("Move #" + idnum.toString() +": "+ color);
     para.appendChild(t)
    
-    var x = document.createElement("INPUT");
-    x.setAttribute("type", "text");
-    x.setAttribute("id", "move".concat(idnum.toString()))
-    x.setAttribute("onkeypress", "processMove(event)")
-    para.appendChild(x)
-
+    
     document.getElementById("maindiv").appendChild(para);
 }
 
@@ -177,7 +173,6 @@ function finishUp(){
         a .csv file that you should upload to Canvas </p>
     <p> Good luck! </p>
     <p> 
-    Move: <input type="text" name="move1" id="move1" onkeypress="processMove(event)">
 	
 	<button class="button_red" name="move1" id="move_red" onclick="processButton('red')">Red</button>
 	<button class="button_blue" name="move1" id="move_blue" onclick="processButton('blue')">Blue</button>
