@@ -22,3 +22,12 @@
   margin: 5px;
 } 
 
+  .main{position:absolute;
+	 width:580px;
+	 margin:0 0 50px 0;
+	 top:20px;
+    left:270px;}
+
+    .reward{position:fixed;
+               padding: 95px 50px 50px 850px;}
+
