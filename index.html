@@ -45,7 +45,7 @@ function processButton(color){
 
 	if (idnum < numMoves){
 
-	    document.getElementById("move".concat(idnum.toString())).select();
+	    //document.getElementById("move".concat(idnum.toString())).select();
 	} else {
 	    finishUp()
 	}
@@ -74,7 +74,7 @@ function processMove(event){
 
 function makeNextInput(color){
     var para = document.createElement("P");
-    var t = document.createTextNode("Move #" + idnum.toString() +": ");
+    var t = document.createTextNode("Move #" + idnum.toString() +": " + color);
     para.appendChild(t)
    
     
