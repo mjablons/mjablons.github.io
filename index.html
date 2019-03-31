@@ -3,7 +3,7 @@
 
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-
+	<link rel="stylesheet" href="styles.css">
     <style>
     div.main{position:absolute;
 	 width:580px;
@@ -14,6 +14,9 @@
     div.reward{position:fixed;
                padding: 95px 50px 50px 850px;}
     </style>
+	
+	
+	
 </head>
 
 <body>
@@ -117,7 +120,7 @@ function getBuffer(moves, bufferLength){
 }
 
 function finishUp(){
-    alert("We are done. You will now save a file of your results. Please upload to stellar, and we will discuss in class.");
+    alert("We are done. You will now save a file of your results. Please upload to Canvas, and we will discuss in class.");
     nickname = document.getElementById("nickname").value;
     var ownMoves = moves.slice(prelimBufferLength);
     var csvString = nickname + "_moves," + nickname + "_payouts" + "\n";
@@ -154,10 +157,12 @@ function finishUp(){
     <p> For each move, please either enter r (for the red button) or b (for the blue button),
         and then press Enter.  You may need to scroll down as the game goes on. </p>
     <p> You will play 100 moves in total. At the end of the game, the site will let you save
-        a .csv file that you should upload to stellar </p>
+        a .csv file that you should upload to Canvas </p>
     <p> Good luck! </p>
     <p> 
     Move: <input type="text" name="move1" id="move1" onkeypress="processMove(event)">
+	
+	<button class="button_blue">Button</button>
     </p>
 </div>
 </body>
