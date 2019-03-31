@@ -34,6 +34,13 @@ var bluePayout100 = 10
 var numMoves = 9
 var payouts = []
 
+
+function processButton(){
+	
+	
+	
+}
+
 function processMove(event){
     if (event.keyCode == 13) {
 	document.getElementById("move".concat(idnum.toString())).readOnly = true;
@@ -162,8 +169,8 @@ function finishUp(){
     <p> 
     Move: <input type="text" name="move1" id="move1" onkeypress="processMove(event)">
 	
-	<button class="button_red" name="move1" id="move_red" onkeypress="processMove(event)">Red</button>
-	<button class="button_blue" name="move1" id="move_blue" onkeypress="processMove(event)">Blue</button>
+	<button class="button_red" name="move1" id="move_red" onclick="processButton">Red</button>
+	<button class="button_blue" name="move1" id="move_blue" onclick="processButton">Blue</button>
 	
     </p>
 </div>
